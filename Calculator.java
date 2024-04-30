@@ -36,7 +36,8 @@ public class Calculator {
     public void setList(double result){
         this.resultList.add(result);
     }
-    public void removeList(){
+    // 3. 에서 미리 해놔서 메서드 이름만 4. 문제에 맞게 변경
+    public void removeResult(){
         this.resultList.remove(0);
     }
 }
