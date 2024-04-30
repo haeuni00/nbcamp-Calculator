@@ -18,19 +18,21 @@ public class App {
             double result = cal.calculate(num1, num2, operator);
 
             System.out.println("결과: " + result);
-            cal.resultList.add(result);
+            //cal.resultList.add(result);
+            cal.setList(result);
 
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String remove = sc.next();
             if(remove.equals("remove")){
-                cal.resultList.remove(0);
+                //cal.resultList.remove(0);
+                cal.removeList();
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String inquiry = sc.next();
             // 향상된 for문으로 연산결과 전부 출력
             if(inquiry.equals("inquiry")){
-                for(double listData: cal.resultList){
+                for(double listData: cal.getList()){
                     System.out.println(listData);
                 }
             }

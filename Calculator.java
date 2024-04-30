@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    ArrayList<Double> resultList = new ArrayList<Double>();
+    /* 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정*/
+    private ArrayList<Double> resultList = new ArrayList<Double>();
 
     public double calculate(int num1, int num2, char operator) throws Exception {
         double result=0;
@@ -26,6 +27,17 @@ public class Calculator {
                     break;
             }
         return result;
+    }
+    /* Getter 메서드 구현 */
+    public ArrayList<Double> getList(){
+        return resultList;
+    }
+    /* Setter 메서드 구현 */
+    public void setList(double result){
+        this.resultList.add(result);
+    }
+    public void removeList(){
+        this.resultList.remove(0);
     }
 }
 
