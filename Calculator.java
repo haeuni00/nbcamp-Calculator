@@ -40,6 +40,12 @@ public class Calculator {
     public void removeResult(){
         this.resultList.remove(0);
     }
+    // 연산 결과들 조회하는 메서드
+    public void inquiryResults() {
+        for(double listData: getList()){
+            System.out.println(listData);
+        }
+    }
 }
 
 class InputException extends Exception{

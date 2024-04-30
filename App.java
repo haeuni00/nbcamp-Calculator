@@ -30,11 +30,14 @@ public class App {
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String inquiry = sc.next();
-            // 향상된 for문으로 연산결과 전부 출력
+
             if(inquiry.equals("inquiry")){
-                for(double listData: cal.getList()){
-                    System.out.println(listData);
-                }
+                // 저장된 연산 결과 조회
+               cal.inquiryResults();
+                // 향상된 for문으로 연산결과 전부 출력
+//                for(double listData: cal.getList()){
+//                    System.out.println(listData);
+//                }
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
