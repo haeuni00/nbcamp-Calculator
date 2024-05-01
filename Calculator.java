@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Calculator {
+public abstract class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     /* 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정*/
     /* 연산 결과를 저장하는 컬렉션 타입 필드가 생성자를 통해 초기화 되도록 변경 */
@@ -9,37 +9,37 @@ public class Calculator {
     // 원의 넓이를 구할때 파이는 변하지 않기 때문에 상수로 선언
     static final double PI =3.14;
 
-    public double calculate(int num1, int num2, char operator) throws Exception {
-        double result=0;
-            if(operator != '+' && operator != '-' && operator != '*' && operator != '/') {
-                throw new OpInputException();
-            }
-            switch (operator) {
-                case '+':
-                    result = num1 + num2;
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-                case '/':
-                        if (num2 == 0) {
-                            throw new InputException();
-                        }
-                    result = num1 / num2;
-                    break;
-            }
-        return result;
-    }
+    public abstract double calculate(int num1, int num2, char operator); // throws Exception {
+//        double result=0;
+//            if(operator != '+' && operator != '-' && operator != '*' && operator != '/') {
+//                throw new OpInputException();
+//            }
+//            switch (operator) {
+//                case '+':
+//                    result = num1 + num2;
+//                    break;
+//                case '-':
+//                    result = num1 - num2;
+//                    break;
+//                case '*':
+//                    result = num1 * num2;
+//                    break;
+//                case '/':
+//                        if (num2 == 0) {
+//                            throw new InputException();
+//                        }
+//                    result = num1 / num2;
+//                    break;
+//            }
+//        return result;
+//    }
 
     /* 원의 넓이를 구하는 메서드 선언*/
-    public double calculateCircleArea(int radius) {
-        /* 원의 넓이 계산 구현 */
-        double cResult = radius*radius*PI;
-        return cResult;
-    }
+    public abstract double calculateCircleArea(int radius); //{
+//        /* 원의 넓이 계산 구현 */
+//        double cResult = radius*radius*PI;
+//        return cResult;
+//    }
     /* 원의 넓이 저장 필드 Getter, Setter, 조회 메서드 구현 */
     public ArrayList<Double> getCircleList(){
         return circleList;

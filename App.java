@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         /* Calculator 인스턴스 생성 */
-        Calculator cal = new Calculator();
+        //Calculator cal = new Calculator();
+        Calculator cal = new ArithmeticCalculator();
+        Calculator cal2 = new CircleCalculator();
+
 
         Scanner sc = new Scanner(System.in);
 
@@ -47,15 +50,15 @@ public class App {
             if(choice.equals("circle")){
                 System.out.println("원의 반지름을 입력하세요.");
                 int radius = sc.nextInt();
-                double cresult = cal.calculateCircleArea(radius);
+                double cresult = cal2.calculateCircleArea(radius);
 
                 System.out.println("결과: " + cresult);
-                cal.setCircleList(cresult);
+                cal2.setCircleList(cresult);
 
                 System.out.println("가장 먼저 저장된 원의 넓이를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String remove = sc.next();
                 if (remove.equals("remove")) {
-                    cal.removeCResult();
+                    cal2.removeCResult();
                 }
 
                 System.out.println("저장된 원의넓이를 조회하시겠습니까? (inquiry 입력 시 조회)");
@@ -63,7 +66,7 @@ public class App {
 
                 if (inquiry.equals("inquiry")) {
                     // 저장된 원의 넓이 모두 조회
-                    cal.inquiryCResults();
+                    cal2.inquiryCResults();
                 }
             }
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
