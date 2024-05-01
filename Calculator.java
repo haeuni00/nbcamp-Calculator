@@ -1,9 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     /* 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정*/
     /* 연산 결과를 저장하는 컬렉션 타입 필드가 생성자를 통해 초기화 되도록 변경 */
-    private ArrayList<Double> resultList = new ArrayList<Double>();
+    private ArrayList<Double> resultList;
+    public Calculator(ArrayList<Double> resultList) {
+        this.resultList = resultList;
+    }
     //원의 넓이 결과를 저장하는 컬렉션 타입의 필드 선언 및 생성
     private ArrayList<Double> circleList = new ArrayList<>();
     // 원의 넓이를 구할때 파이는 변하지 않기 때문에 상수로 선언

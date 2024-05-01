@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         /* Calculator 인스턴스 생성 */
-        //Calculator cal = new Calculator();
+        //Calculator cal = new Calculator(new ArrayList<>());
 
         ArithmeticCalculator cal = new ArithmeticCalculator();
         CircleCalculator cal2 = new CircleCalculator();
