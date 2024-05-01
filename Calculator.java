@@ -35,11 +35,7 @@ public abstract class Calculator {
 //    }
 
     /* 원의 넓이를 구하는 메서드 선언*/
-    public abstract double calculateCircleArea(int radius); //{
-//        /* 원의 넓이 계산 구현 */
-//        double cResult = radius*radius*PI;
-//        return cResult;
-//    }
+    public abstract double calculateCircleArea(int radius);
     /* 원의 넓이 저장 필드 Getter, Setter, 조회 메서드 구현 */
     public ArrayList<Double> getCircleList(){
         return circleList;
@@ -91,3 +87,5 @@ class OpInputException extends Exception{
         super("+, -, *, / 중에 입력해야합니다.");
     }
 }
+
+
