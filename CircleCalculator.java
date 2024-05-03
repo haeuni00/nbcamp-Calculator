@@ -1,7 +1,9 @@
+import java.util.ArrayList;
+
 public class CircleCalculator extends Calculator{
-    @Override
-    public double calculate(int num1, int num2, char operator) {
-        return 0;
+
+    public CircleCalculator(ArrayList<Double> resultList){
+        super(resultList);
     }
 
     public double calculateCircleArea(int radius) {

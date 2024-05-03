@@ -1,12 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         /* Calculator 인스턴스 생성 */
-        //Calculator cal = new Calculator(new ArrayList<>());
+       // Calculator cal = new Calculator(new ArrayList<>(), new ArrayList<>());
 
-        ArithmeticCalculator cal = new ArithmeticCalculator();
-        CircleCalculator cal2 = new CircleCalculator();
+        ArithmeticCalculator cal = new ArithmeticCalculator(new ArrayList<>());
+        CircleCalculator cal2 = new CircleCalculator(new ArrayList<>());
 
 
         Scanner sc = new Scanner(System.in);
@@ -54,12 +55,12 @@ public class App {
                 double cresult = cal2.calculateCircleArea(radius);
 
                 System.out.println("결과: " + cresult);
-                cal2.setCircleList(cresult);
+                cal2.setList(cresult);
 
                 System.out.println("가장 먼저 저장된 원의 넓이를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String remove = sc.next();
                 if (remove.equals("remove")) {
-                    cal2.removeCResult();
+                    cal2.removeResult();
                 }
 
                 System.out.println("저장된 원의넓이를 조회하시겠습니까? (inquiry 입력 시 조회)");
@@ -67,7 +68,7 @@ public class App {
 
                 if (inquiry.equals("inquiry")) {
                     // 저장된 원의 넓이 모두 조회
-                    cal2.inquiryCResults();
+                    cal2.inquiryResults();
                 }
             }
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");

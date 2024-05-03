@@ -1,10 +1,16 @@
+import java.util.ArrayList;
+
 public class ArithmeticCalculator extends Calculator{
     AddOperator addOperator = new AddOperator();
     SubtractOperator subtractOperator = new SubtractOperator();
     MultiplyOperator multiplyOperator = new MultiplyOperator();
     DivideOperator divideOperator = new DivideOperator();
+
+    public ArithmeticCalculator(ArrayList<Double> resultList){
+        super(resultList);
+    }
     public double calculate(int num1, int num2, char operator) {
-        double result=0;
+        double result = 0;
         switch (operator) {
             case '+':
                 //result = num1 + num2;
@@ -24,10 +30,5 @@ public class ArithmeticCalculator extends Calculator{
                 break;
         }
         return result;
-    }
-
-    @Override
-    public double calculateCircleArea(int radius) {
-        return 0;
     }
 }
